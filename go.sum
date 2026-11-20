@@ -56,8 +56,6 @@ github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
 github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
 github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=
 github.com/kylelemons/godebug v1.1.0/go.mod h1:9/0rRGxNHcop5bhtWyNeEfOS8JIWk580+fNqagV/RAw=
-github.com/mhutchinson/incubator v0.0.0-20261118163453-bce94c4ae11e h1:GXuuLXRIhkzppEe1ywSIIIs5BdNkgpBkHwzFeiyLoc4=
-github.com/mhutchinson/incubator v0.0.0-20261118163453-bce94c4ae11e/go.mod h1:wlow1R25hiPmW48TjEM+bU/WWXvAPRk1N8SkHnmHUI8=
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 h1:C3w9PqII01/Oq1c1nUAm88MOHcQC9l5mIlSMApZMrHA=
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822/go.mod h1:+n7T8mK8HuQTcFwEeznm/DIxMOiR9yIdICNftLE1DvQ=
 github.com/pingcap/errors v0.11.4 h1:lFuQV/oaUMGcD2tqt+01ROSmJs75VG1ToEOkZIZ4nE4=
@@ -84,6 +82,8 @@ github.com/tetratelabs/wazero v1.12.0 h1:DuWcpNu/FzgEXgGBDp8J1Spc+CWOvvtvVyjKlaZ
 github.com/tetratelabs/wazero v1.12.0/go.mod h1:LvKtzl2RqO4gyF27BiXU+nKAjcV8f38U+kP/q2vgxh0=
 github.com/transparency-dev/formats v0.1.2-0.20261027211732-55fe9bf0fa53 h1:yhYk19lcG42d9r9m957D5HpDIeP+NgpuTKy/S50++y0=
 github.com/transparency-dev/formats v0.1.2-0.20261027211732-55fe9bf0fa53/go.mod h1:AcGPVj62+dtCMlD/pdeG1LeUkYo0D+IHRWg1LmQazGE=
+github.com/transparency-dev/incubator v0.0.0-20261119113348-bea9f0219d79 h1:VH9aWZnh1pc+/WcA4pppK7QjWdBOUCmt+aU4nsCMIwY=
+github.com/transparency-dev/incubator v0.0.0-20261119113348-bea9f0219d79/go.mod h1:wlow1R25hiPmW48TjEM+bU/WWXvAPRk1N8SkHnmHUI8=
 github.com/transparency-dev/merkle v0.0.2 h1:Q9nBoQcZcgPamMkGn7ghV8XiTZ/kRxn1yCG81+twTK4=
 github.com/transparency-dev/merkle v0.0.2/go.mod h1:pqSy+OXefQ1EDUVmAJ8MUhHB9TXGuzVAT58PqBoHz1A=
 github.com/transparency-dev/tessera v1.0.4 h1:IXjGowubcLR0T3zUQrysSMKgtTh9KGKQ0iajUiubyP4=
