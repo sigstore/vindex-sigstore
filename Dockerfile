@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Debian 13 (Trixie) image to build binary for distroless/static-debian13
-FROM --platform=$BUILDPLATFORM golang:1.27.3-trixie@sha256:e519d3b0a5b285e5aa53ab9eef02bc6bbb9cb04608389b743a136a9ce75f0d1e AS builder
+FROM --platform=$BUILDPLATFORM golang:1.27.3-trixie@sha256:af1bfc2614ebb1dbd31af514b78740fd678850e76498762b425ecee4c5c6ea80 AS builder
 ARG TARGETOS
 ARG TARGETARCH
 ENV APP_ROOT=/opt/app-root
@@ -32,7 +32,7 @@ RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -trimpath -ldfl
 RUN mkdir -p /mnt/disks/data /mnt/disks/mpt /etc/vindex
 
 # Production deployment build
-FROM gcr.io/distroless/static-debian13:nonroot@sha256:e2e927ec666bae08560abb3c55d0659eceabb657f56b6782ab500a9fc7f555e3 AS deploy
+FROM gcr.io/distroless/static-debian13:nonroot@sha256:8ce6dd87e9823c5b48dcfb2c8604714ccb351ce59607327bcc4957448da279b5 AS deploy
 # Retrieve the binary and mount directories from the builder stage
 COPY --from=builder /opt/app-root/src/vindexd /usr/local/bin/vindexd
 COPY --from=builder --chown=65532:65532 /mnt/disks /mnt/disks
@@ -41,7 +41,7 @@ EXPOSE 8080 9090
 ENTRYPOINT ["/usr/local/bin/vindexd"]
 
 # Local deployment build (includes a shell and curl)
-FROM golang:1.27.1-trixie@sha256:8f58fd67ea075142d947a60e0caa4317746a55118d312f027793d382c7741734 AS local-deploy
+FROM golang:1.27.3-trixie@sha256:af1bfc2614ebb1dbd31af514b78740fd678850e76498762b425ecee4c5c6ea80 AS local-deploy
 COPY --from=builder /opt/app-root/src/vindexd /usr/local/bin/vindexd
 COPY --from=builder --chown=65532:65532 /mnt/disks /mnt/disks
 COPY --from=builder --chown=65532:65532 /etc/vindex /etc/vindex
@@ -66,7 +66,7 @@ ARG SERVER_LDFLAGS
 RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -gcflags "all=-N -l" -ldflags "${SERVER_LDFLAGS}" -o vindexd_debug github.com/transparency-dev/incubator/vindex/cmd/vindexd
 
 # Multi-stage debugger build
-FROM golang:1.27.1-trixie@sha256:8f58fd67ea075142d947a60e0caa4317746a55118d312f027793d382c7741734 AS debug
+FROM golang:1.27.3-trixie@sha256:af1bfc2614ebb1dbd31af514b78740fd678850e76498762b425ecee4c5c6ea80 AS debug
 ARG TARGETOS
 ARG TARGETARCH
 COPY --from=dlvbuilder /opt/app-root/bin/dlv* /opt/app-root/bin/${TARGETOS}_${TARGETARCH}/dlv* /usr/local/bin/
