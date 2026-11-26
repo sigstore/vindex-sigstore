@@ -2,9 +2,7 @@ module github.com/sigstore/vindex-sigstore
 
 go 1.27.0
 
-replace github.com/transparency-dev/incubator => github.com/mhutchinson/incubator v0.0.0-20261118163453-bce94c4ae11e
-
-require github.com/transparency-dev/incubator v0.0.0-00010101000000-000000000000
+require github.com/transparency-dev/incubator v0.0.0-20261119113348-bea9f0219d79
 
 require (
 	filippo.io/mldsa v1.0.0 // indirect
